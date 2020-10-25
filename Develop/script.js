@@ -1,8 +1,13 @@
 // Assignment code here
-
+const password = document.get.ElementById
+('password')
+const generate = document.getElementById
+<'generate'
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
+
+
 
 // Write password to the #password input
 function writePassword() {
@@ -10,6 +15,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
   var str = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' + 'abcedefghijklmnopqrstuvwxyz0123456789@#$';
 
+  // Loop 
   for (i = 1; 1<= 8; i++) {
     var char = Math.floor (Math.random ()
     * str.length +1);
