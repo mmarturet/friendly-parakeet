@@ -27,9 +27,7 @@ var toUpper = function (x) {
 
 alpha2 = alpha.map(toUpper);
 
-var get = document.querySelector("#password");
-
-get.addEventListener("click", function () {
+document.querySelector("#generate").addEventListener("click", function () {
   ps = generatePassword();
   document.getElementById("#password").placeholder = ps;
 });
@@ -37,7 +35,8 @@ get.addEventListener("click", function () {
 // Write password to the #password input
 function generatePassword() {
   //user input ask
-  enter = (promp("How many characters would you like your password? Choose between 8 and 128"))
+  console.log("hello!")
+  enter = (prompt("How many characters would you like your password? Choose between 8 and 128"))
   // if statement validation
   if (!enter) {
     alert("This needs to be a value");
@@ -56,31 +55,31 @@ function generatePassword() {
   }
 
   // 4 options
-  else if (confirmCharacter && confirmNumber && confirmUppercase && confirmLowercase) {
+  else if (confirmSymbols && confirmNumber && confirmUppercase && confirmLowercase) {
 
-    choices = character.concat(number, alpha, alpha2);
+    choices = symbol.concat(number, alpha, alpha2);
 }
 //  3 options
-else if (confirmCharacter && confirmNumber && confirmUppercase) {
-    choices = character.concat(number, alpha2);
+else if (confirmSymbols && confirmNumber && confirmUppercase) {
+    choices = symbol.concat(number, alpha2);
 }
-else if (confirmCharacter && confirmNumber && confirmLowercase) {
-    choices = character.concat(number, alpha);
+else if (confirmSymbols && confirmNumber && confirmLowercase) {
+    choices = symbol.concat(number, alpha);
 }
-else if (confirmCharacter && confirmLowercase && confirmUppercase) {
-    choices = character.concat(alpha, alpha2);
+else if (confirmSymbols && confirmLowercase && confirmUppercase) {
+    choices = symbol.concat(alpha, alpha2);
 }
 else if (confirmNumber && confirmLowercase && confirmUppercase) {
     choices = number.concat(alpha, alpha2);
 }
 //  2 options 
-else if (confirmCharacter && confirmNumber) {
+else if (confirmSymbols && confirmNumber) {
   choices = character.concat(number);
 
-} else if (confirmCharacter && confirmLowercase) {
+} else if (confirmSymbols && confirmLowercase) {
   choices = character.concat(alpha);
 
-} else if (confirmCharacter && confirmUppercase) {
+} else if (confirmSymbols && confirmUppercase) {
   choices = character.concat(alpha2);
 }
 else if (confirmLowercase && confirmNumber) {
@@ -93,7 +92,7 @@ else if (confirmLowercase && confirmNumber) {
   choices = number.concat(alpha2);
 }
 // 1 option
-else if (confirmCharacter) {
+else if (confirmSymbols) {
   choices = character;
 }
 else if (confirmNumber) {
